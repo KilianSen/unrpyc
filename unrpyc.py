@@ -79,6 +79,12 @@ class Context:
     def set_state(self, state):
         self.state = state
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        pass
+
 
 class BadRpycException(Exception):
     """Exception raised when we couldn't parse the rpyc archive format"""
